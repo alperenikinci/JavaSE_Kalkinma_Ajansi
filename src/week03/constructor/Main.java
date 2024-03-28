@@ -11,6 +11,6 @@ public class Main {
         Main obj2 = new Main();
 //        obj.name ="Constructor name field.";
 //        obj2.name="Constructor name field.";
-        System.out.println("The name is : " + obj.name+"\nThe second name is : " + obj.name);
+        System.out.println("The name is : " + obj.name+"\nThe second name is : " + obj2.name);
     }
 }
