@@ -16,7 +16,7 @@ public class LinkedHashSetExample03 {
 
         System.out.println(oddNumbers);
         oddNumbers.remove(6);
-        System.out.println("after remve");
+        System.out.println("after remove");
         System.out.println(oddNumbers);
 
         oddNumbers.removeAll(oddNumbers);

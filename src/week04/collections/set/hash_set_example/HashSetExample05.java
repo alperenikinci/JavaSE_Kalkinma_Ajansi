@@ -22,6 +22,6 @@ public class HashSetExample05 {
         oddNumbers.add(6);
 
         evenNumbers.retainAll(oddNumbers);//retainAll() methodu, evenNumbers içerisinde sadece kesişimi tutar.
-        System.out.println();
+        System.out.println(evenNumbers);
     }
 }
