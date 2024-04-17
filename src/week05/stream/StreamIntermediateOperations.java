@@ -60,6 +60,41 @@ public class StreamIntermediateOperations {
                 .collect(Collectors.toList());
         System.out.println(evenNumberList);
 
+        // flatMap()
+        List<List<Integer>> nestedList = Arrays.asList(
+                Arrays.asList(1,2,3),
+                Arrays.asList(4,5,6),
+                Arrays.asList(7,8,9)
+        );
+
+        List<Integer> flattenedList = nestedList.stream()
+                .flatMap(List::stream)// Her iç liste için bir Stream oluşturup birleştirme.
+                .collect(Collectors.toList());
+
+        System.out.println(nestedList);
+        System.out.println(flattenedList);
+
+        List<Stream<Integer>> streamNestedList = nestedList.stream()
+                .map(i -> i.stream().map(j -> j*2))
+                .collect(Collectors.toList());
+        System.out.println(streamNestedList);
+        List<List<Integer>> mappedNestedList = nestedList.stream()
+                .map(i -> i.stream()
+                        .map(j -> j*2)
+                        .collect(Collectors.toList()))
+                .collect(Collectors.toList());
+        System.out.println(mappedNestedList);
+
+        List<Integer> mappedFlatenedList = flattenedList.stream()
+                .map(i -> i*2)
+                .collect(Collectors.toList());
+        System.out.println(mappedFlatenedList);
+
+        List<Integer> flattenedMappedList = nestedList.stream()
+                .flatMap(List::stream)
+                .map(i -> i*2).collect(Collectors.toList());
+        System.out.println(flattenedMappedList);
+
         //sorted() -> doğal sıralamaya göre sıralar. Comparable interface'inden implement edilen öğeleri
         //barındırdığı sürece efektif bir şekilde çalışır.
         //Stream<T> sorted(Comparator<? super T> comparator);
