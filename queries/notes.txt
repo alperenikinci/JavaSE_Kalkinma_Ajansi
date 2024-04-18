@@ -1,0 +1,7 @@
+Bir tablo nasıl görüntülenir;
+    1 - database'i aç (postgres)
+    2 - Schemas'ı aç
+    3 - Tables'ı aç
+    4 - Görüntülemek istediğim tablo burada görünmeli.
+        4.1 - Tabloyu açmak ve içeriğine erişmek için;
+            ->> Tabloya sağ click, View/Edit Data -> All Rows
