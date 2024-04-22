@@ -14,16 +14,20 @@ public class Main {
         address2.content = "Istanbul";
 
         Customer_Address customerAddress  = new Customer_Address();
-        customerAddress.addressList.add(address);
-        customerAddress.customerList.add(customer);
-        customerAddress.customerList.add(customer2);
+        customerAddress.id = 1;
+        customerAddress.address = address;
+        customerAddress.customer = customer;
         Customer_Address customerAddress1 = new Customer_Address();
-        customerAddress1.addressList.add(address2);
-        customerAddress1.customerList.add(customer);
-        System.out.println("Customer_Address_ID " +customerAddress1.id+
-                "\nCustomers : "+ customerAddress1.customerList+
-                "\nAddresses : "+ customerAddress1.addressList
-        );
+        customerAddress1.id = 2;
+        customerAddress1.address = address;
+        customerAddress1.customer = customer2;
+        Customer_Address customerAddress2 = new Customer_Address();
+        customerAddress2.id = 3;
+        customerAddress2.address = address2;
+        customerAddress2.customer = customer;
+        System.out.println(customerAddress);
+        System.out.println(customerAddress1);
+        System.out.println(customerAddress2);
 
 
     }
@@ -53,16 +57,18 @@ public class Main {
     }
     public static class Customer_Address{
         int id;
-        List<Customer> customerList = new ArrayList<>();
-        List<Address> addressList = new ArrayList<>();
+        Customer customer;
+        Address address;
 
         @Override
         public String toString() {
             return "Customer_Address{" +
                     "id=" + id +
-                    ", customerList=" + customerList +
-                    ", addressList=" + addressList +
+                    ", customer=" + customer +
+                    ", address=" + address +
                     '}';
         }
+
+
     }
 }
